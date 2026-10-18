@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPUB 阅读器</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="reader.css">
+  <script defer src="vendor/jszip.min.js"></script>
+  <script defer src="vendor/epub.min.js"></script>
+  <script defer src="reader.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <button id="open" type="button">打开 EPUB</button>
+    <input id="file" type="file" accept=".epub,application/epub+zip" hidden>
+    <h1 id="title">EPUB 阅读器</h1>
+    <label class="chapter-label" for="chapters">目录</label>
+    <select id="chapters" disabled aria-label="章节目录">
+      <option value="">尚未打开书籍</option>
+    </select>
+    <div class="font-controls" aria-label="字号">
+      <button id="smaller" type="button" disabled aria-label="缩小字号">A−</button>
+      <output id="font-size" aria-live="polite">20px</output>
+      <button id="larger" type="button" disabled aria-label="放大字号">A+</button>
+    </div>
+  </header>
+  <div id="error" role="alert" hidden></div>
+  <main>
+    <div id="empty">
+      <h2>打开一本书，开始阅读</h2>
+      <p>点击左上角“打开 EPUB”，选择本机的 .epub 文件。</p>
+      <p>文件只在当前浏览器中读取，不会上传。</p>
+    </div>
+    <div id="viewer" aria-label="书籍正文" hidden></div>
+  </main>
+  <footer>
+    <button id="previous" type="button" disabled>← 上一页</button>
+    <span id="status" role="status" aria-live="polite">支持 EPUB；不支持 PDF 或 DRM 加密书籍</span>
+    <button id="next" type="button" disabled>下一页 →</button>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "local-epub-reader",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chench53/epub-reader.git"
+  },
+  "scripts": {
+    "build": "node build.cjs",
+    "start": "node start.cjs",
+    "test": "node --test test_start.cjs"
+  },
+  "dependencies": {
+    "epubjs": "0.3.93",
+    "jszip": "3.10.1"
+  },
+  "overrides": {
+    "@xmldom/xmldom": "0.8.15"
+  }
+}

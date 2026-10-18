@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; font-family: system-ui, "Microsoft YaHei", sans-serif; color: #273238; background: #f5f3ed; }
+body { margin: 0; height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+.toolbar { display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: #fff; border-bottom: 1px solid #d9dedb; flex-wrap: wrap; }
+button, select { font: inherit; border: 1px solid #bdc9c4; border-radius: 6px; background: #fff; color: inherit; padding: 8px 12px; }
+button { cursor: pointer; white-space: nowrap; }
+button:hover:not(:disabled) { background: #e9f1ed; }
+button:disabled, select:disabled { opacity: .45; cursor: default; }
+button:focus-visible, select:focus-visible { outline: 3px solid #37765c; outline-offset: 2px; }
+#open { background: #286247; color: #fff; border-color: #286247; }
+#open:hover:not(:disabled) { background: #1e4c37; }
+h1 { font-size: 16px; margin: 0; flex: 1; min-width: 120px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#chapters { max-width: 300px; min-width: 100px; }
+.font-controls { display: flex; align-items: center; gap: 8px; }
+#font-size { min-width: 42px; text-align: center; font-size: 14px; }
+main { flex: 1; min-height: 0; position: relative; margin: 12px auto; width: min(100%, 1000px); background: #fffdf7; border-radius: 4px; overflow: hidden; }
+#viewer { width: 100%; height: 100%; }
+#empty { padding: 60px 24px; text-align: center; color: #65716a; }
+#empty h2 { font-size: 24px; font-weight: 500; }
+#error { padding: 10px 20px; color: #8b2020; background: #ffeded; overflow-wrap: anywhere; }
+footer { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding: 8px 20px 16px; }
+#status { text-align: center; font-size: 14px; color: #65716a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+[hidden] { display: none !important; }
+@media (max-width: 700px) {
+  .toolbar { gap: 8px; padding: 8px; }
+  h1 { min-width: 160px; }
+  #chapters { flex: 1; max-width: none; width: 120px; }
+  main { margin: 4px auto; }
+  footer { gap: 8px; padding: 8px; }
+  footer button { padding: 8px; }
+}
